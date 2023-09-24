@@ -58,7 +58,7 @@ const key_override_t capsword_key_override = ko_make_basic(MOD_MASK_SHIFT, CW_TO
 // shift + , = ;
 const key_override_t comma_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_COMMA, KC_SEMICOLON);
 // shift + . = :
-const key_override_t dot_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_DOT, KC_EXLM);
+const key_override_t dot_key_override = ko_make_basic(MOD_MASK_SHIFT, ALGR_T(KC_DOT), KC_COLON);
 
 const key_override_t **key_overrides = (const key_override_t *[]){
     &capsword_key_override,
@@ -66,6 +66,58 @@ const key_override_t **key_overrides = (const key_override_t *[]){
     &dot_key_override,
     NULL
 };
+
+// See https://github.com/qmk/qmk_firmware/issues/6175#issuecomment-504730214
+enum custom_keycodes {
+  // These enable moving of windows without having to press
+  // GUI and Nav at the same time
+  NAV_AND_LEFT = SAFE_RANGE,
+  NAV_AND_DOWN,
+  NAV_AND_UP,
+  NAV_AND_RIGHT
+};
+
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case NAV_AND_LEFT:
+            if (record->event.pressed) {
+                // When the key is pressed, hold down LGUI, press left arrow, and then release LGUI
+                register_code(KC_LGUI);
+                register_code(KC_LEFT);
+                unregister_code(KC_LEFT);
+                unregister_code(KC_LGUI);
+            }
+            break;
+        case NAV_AND_DOWN:
+            if (record->event.pressed) {
+                register_code(KC_LGUI);
+                register_code(KC_DOWN);
+            } else {
+                unregister_code(KC_LGUI);
+                unregister_code(KC_DOWN);
+            }
+            break;
+        case NAV_AND_UP:
+            if (record->event.pressed) {
+                register_code(KC_LGUI);
+                register_code(KC_UP);
+            } else {
+                unregister_code(KC_LGUI);
+                unregister_code(KC_UP);
+            }
+            break;
+        case NAV_AND_RIGHT:
+            if (record->event.pressed) {
+                register_code(KC_LGUI);
+                register_code(KC_RIGHT);
+            } else {
+                unregister_code(KC_LGUI);
+                unregister_code(KC_RIGHT);
+            }
+            break;
+    }
+    return true;
+}
 
 // END OF MY OWN CUSTOMIZATIONS
 
