@@ -50,14 +50,24 @@ MIRYOKU_LAYER_LIST
 
 
 // shift functions
-
 const key_override_t capsword_key_override = ko_make_basic(MOD_MASK_SHIFT, CW_TOGG, KC_CAPS);
+
+
+// START OF MY OWN CUSTOMIZATIONS
+
+// shift + , = ; 
+const key_override_t comma_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_COMMA, KC_SEMICOLON);
+// shift + . = :
+const key_override_t dot_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_DOT, KC_COLON);
 
 const key_override_t **key_overrides = (const key_override_t *[]){
     &capsword_key_override,
+    &comma_key_override,
+    &dot_key_override,
     NULL
 };
 
+// END OF MY OWN CUSTOMIZATIONS
 
 // thumb combos
 
