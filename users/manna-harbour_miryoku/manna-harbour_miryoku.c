@@ -67,54 +67,50 @@ const key_override_t **key_overrides = (const key_override_t *[]){
     NULL
 };
 
-// See https://github.com/qmk/qmk_firmware/issues/6175#issuecomment-504730214
-enum custom_keycodes {
-  // These enable moving of windows without having to press
-  // GUI and Nav at the same time
-  NAV_AND_LEFT = SAFE_RANGE,
-  NAV_AND_DOWN,
-  NAV_AND_UP,
-  NAV_AND_RIGHT
-};
-
+// Turn Gui + {m,n,e,i} into Gui + {left,down,up,right} arrow keys
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    bool left_gui_held = get_mods() & MOD_BIT(KC_LGUI);
     switch (keycode) {
-        case NAV_AND_LEFT:
+        case KC_M: {
+            static uint8_t key = KC_NO;
             if (record->event.pressed) {
-                // When the key is pressed, hold down LGUI, press left arrow, and then release LGUI
-                register_code(KC_LGUI);
-                register_code(KC_LEFT);
-                unregister_code(KC_LEFT);
-                unregister_code(KC_LGUI);
-            }
-            break;
-        case NAV_AND_DOWN:
-            if (record->event.pressed) {
-                register_code(KC_LGUI);
-                register_code(KC_DOWN);
+                key = left_gui_held ? KC_LEFT : KC_M;
+                register_code(key);
             } else {
-                unregister_code(KC_LGUI);
-                unregister_code(KC_DOWN);
+                unregister_code(key);
             }
-            break;
-        case NAV_AND_UP:
+            return false;
+        }
+        case KC_N: {
+            static uint8_t key = KC_NO;
             if (record->event.pressed) {
-                register_code(KC_LGUI);
-                register_code(KC_UP);
+                key = left_gui_held ? KC_DOWN : KC_N;
+                register_code(key);
             } else {
-                unregister_code(KC_LGUI);
-                unregister_code(KC_UP);
+                unregister_code(key);
             }
-            break;
-        case NAV_AND_RIGHT:
+            return false;
+        }
+        case KC_E: {
+            static uint8_t key = KC_NO;
             if (record->event.pressed) {
-                register_code(KC_LGUI);
-                register_code(KC_RIGHT);
+                key = left_gui_held ? KC_UP : KC_E;
+                register_code(key);
             } else {
-                unregister_code(KC_LGUI);
-                unregister_code(KC_RIGHT);
+                unregister_code(key);
             }
-            break;
+            return false;
+        }
+        case KC_I: {
+            static uint8_t key = KC_NO;
+            if (record->event.pressed) {
+                key = left_gui_held ? KC_RIGHT : KC_I;
+                register_code(key);
+            } else {
+                unregister_code(key);
+            }
+            return false;
+        }
     }
     return true;
 }
