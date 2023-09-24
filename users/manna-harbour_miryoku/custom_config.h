@@ -32,12 +32,34 @@ LGUI_T(KC_A),      LALT_T(KC_R),      LCTL_T(KC_S),      LSFT_T(KC_T),      KC_G
 LT(U_BUTTON,KC_Z), ALGR_T(KC_X),      KC_C,              KC_D,              KC_V,              KC_K,              KC_H,              KC_COMM,           ALGR_T(KC_DOT),    LT(U_BUTTON,KC_SLSH),\
 U_NP,              U_NP,              LT(U_MEDIA,KC_ESC),LT(U_NAV,KC_TAB),  LT(U_MOUSE,KC_SPC),LT(U_SYM,KC_ENT),  LT(U_NUM,KC_BSPC), LT(U_FUN,KC_DEL),  U_NP,              U_NP
 
-
+#define MIRYOKU_LAYER_NAV \
+    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,        KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,\
+    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,        KC_LEFT, KC_DOWN, KC_UP, KC_RIGHT, KC_NO,\
+    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,        KC_MS_LEFT, KC_MS_DOWN, KC_MS_UP, KC_MS_RIGHT, KC_NO,\
+    U_NP, U_NP, KC_NO, KC_NO, KC_NO,          KC_MS_BTN2, KC_MS_BTN1, KC_NO, U_NP, U_NP
 
 // ! < > $ %    & { } X X
 // ~ - + = #    | ( ) @ X
 // ^ / * \ X    X [ ] X X
-// 
+#define MIRYOKU_LAYER_SYM \
+KC_EXLM,      KC_LT,      KC_GT,      KC_DLR,      KC_PERC,              KC_AMPR,      KC_LCBR,      KC_RCBR,      KC_NO, KC_NO,\
+KC_TILD,      KC_PMNS,      KC_PLUS,      KC_PEQL,      KC_HASH,         KC_PIPE,      KC_LPRN, KC_RPRN,      KC_AT,      KC_NO,\
+     KC_CIRC,      KC_PSLS,      KC_ASTR,      KC_BSLS, KC_NO,           KC_NO,      KC_LBRC,      KC_RBRC,      KC_NO, KC_NO,\
+    U_NP, U_NP, KC_NO,  KC_NO,      KC_NO,                               KC_NO, KC_NO,      KC_NO, U_NP, U_NP
+
+#define MIRYOKU_LAYER_NUM \
+      KC_NO, KC_7, KC_8, KC_9, KC_KP_PLUS,  KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, \
+     KC_NO, KC_4, KC_5, KC_6, KC_KP_MINUS,  KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,\
+     KC_NO, KC_1, KC_2, KC_3, KC_NO,        KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,\
+    U_NP, U_NP, KC_DOT, KC_0, KC_NO,        KC_NO, KC_NO, KC_NO, U_NP, U_NP
+
+#define MIRYOKU_LAYER_FUN \
+    KC_F9, KC_F10, KC_F11, KC_F12, KC_NO,     KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,\
+    KC_F5, KC_F6, KC_F7, KC_F8, KC_NO,        KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,\
+    KC_F1, KC_F2, KC_F3, KC_F4, KC_NO,        KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,\
+    U_NP, U_NP, KC_DOT, KC_0, KC_NO,          KC_NO, KC_NO, KC_NO, U_NP, U_NP
+
+//
 // NAV LAYER (RHS):
 // left, down, up, right in second row
 // mouse movement in third row
