@@ -32,6 +32,12 @@ LGUI_T(KC_A),      LALT_T(KC_R),      LCTL_T(KC_S),      LSFT_T(KC_T),      KC_G
 LT(U_BUTTON,KC_Z), ALGR_T(KC_X),      KC_C,              KC_D,              KC_V,              KC_K,              KC_H,              KC_COMM,           ALGR_T(KC_DOT),    LT(U_BUTTON,KC_SLSH),\
 U_NP,              U_NP,              LT(U_MEDIA,KC_ESC),LT(U_NAV,KC_TAB),  LT(U_MOUSE,KC_SPC),LT(U_SYM,KC_ENT),  LT(U_NUM,KC_BSPC), LT(U_FUN,KC_DEL),  U_NP,              U_NP
 
+#define MIRYOKU_LAYER_MEDIA \
+    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,        KC_NO,               KC_NO,          KC_NO,             KC_NO,                 KC_NO,\
+    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,        KC_MEDIA_PREV_TRACK, KC_AUDIO_VOL_UP, KC_AUDIO_VOL_DOWN, KC_MEDIA_NEXT_TRACK,  KC_NO,\
+    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,        KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,\
+    U_NP, U_NP, KC_NO, KC_NO, KC_NO,          KC_NO, KC_NO, KC_NO, U_NP, U_NP
+
 #define MIRYOKU_LAYER_NAV \
     KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,        KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,\
     KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,        KC_LEFT, KC_DOWN, KC_UP, KC_RIGHT, KC_NO,\
@@ -39,12 +45,13 @@ U_NP,              U_NP,              LT(U_MEDIA,KC_ESC),LT(U_NAV,KC_TAB),  LT(U
     U_NP, U_NP, KC_NO, KC_NO, KC_NO,          KC_MS_BTN2, KC_MS_BTN1, KC_NO, U_NP, U_NP
 
 // ! < > $ %    & { } X X
-// ~ - + = #    | ( ) @ X
-// ^ / * \ X    X [ ] X X
+// _ - + = #    | ( ) @ X
+// ^ ~ / * \    X [ ] X X
+// >>/*
 #define MIRYOKU_LAYER_SYM \
 KC_EXLM,      KC_LT,      KC_GT,      KC_DLR,      KC_PERC,              KC_AMPR,      KC_LCBR,      KC_RCBR,      KC_NO, KC_NO,\
-KC_TILD,      KC_PMNS,      KC_PLUS,      KC_PEQL,      KC_HASH,         KC_PIPE,      KC_LPRN, KC_RPRN,      KC_AT,      KC_NO,\
-     KC_CIRC,      KC_PSLS,      KC_ASTR,      KC_BSLS, KC_NO,           KC_NO,      KC_LBRC,      KC_RBRC,      KC_NO, KC_NO,\
+KC_UNDERSCORE,  KC_KP_MINUS,    KC_KP_PLUS,  KC_KP_EQUAL,   KC_HASH,     KC_PIPE,      KC_LPRN, KC_RPRN,      KC_AT,      KC_NO,\
+KC_CIRC, KC_TILD,    KC_PSLS,      KC_ASTR,      KC_BSLS,                KC_NO,      KC_LBRC,      KC_RBRC,      KC_NO, KC_NO,\
     U_NP, U_NP, KC_NO,  KC_NO,      KC_NO,                               KC_NO, KC_NO,      KC_NO, U_NP, U_NP
 
 #define MIRYOKU_LAYER_NUM \

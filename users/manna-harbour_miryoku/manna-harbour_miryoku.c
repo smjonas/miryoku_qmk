@@ -55,10 +55,10 @@ const key_override_t capsword_key_override = ko_make_basic(MOD_MASK_SHIFT, CW_TO
 
 // START OF MY OWN CUSTOMIZATIONS
 
-// shift + , = ; 
+// shift + , = ;
 const key_override_t comma_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_COMMA, KC_SEMICOLON);
 // shift + . = :
-const key_override_t dot_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_DOT, KC_COLON);
+const key_override_t dot_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_DOT, KC_EXLM);
 
 const key_override_t **key_overrides = (const key_override_t *[]){
     &capsword_key_override,
