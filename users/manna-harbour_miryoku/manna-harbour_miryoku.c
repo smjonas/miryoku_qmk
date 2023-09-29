@@ -68,7 +68,7 @@ const key_override_t **key_overrides = (const key_override_t *[]){
 };
 
 // Turn Gui + {m,n,e,i} into Gui + {left,down,up,right} arrow keys
-bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+/* bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     bool left_gui_held = get_mods() & MOD_BIT(KC_LGUI);
     switch (keycode) {
         case KC_M: {
@@ -113,7 +113,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         }
     }
     return true;
-}
+} */
 
 // END OF MY OWN CUSTOMIZATIONS
 
