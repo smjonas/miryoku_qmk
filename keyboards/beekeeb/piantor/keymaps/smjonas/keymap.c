@@ -21,11 +21,11 @@ enum layers {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_BASE] = LAYOUT_split_3x6_3(
-        KC_ESC,            KC_Q,          KC_W,               KC_F,          KC_P,             KC_B,             KC_J,              KC_L,              KC_U,              KC_Y,              KC_QUOT,       XXX,
-        KC_HEART,          LGUI_T(KC_A),  LALT_T(KC_R),       LCTL_T(KC_S),  LSFT_T(KC_T),     KC_G,             KC_M,              LSFT_T(KC_N),      LCTL_T(KC_E),      LALT_T(KC_I),      LGUI_T(KC_O),  KC_RGUI,
-        KC_LCTL,           KC_Z,          ALGR_T(KC_X),       KC_C,          KC_D,             KC_V,             KC_K,              KC_H,              KC_COMM,           ALGR_T(KC_DOT),    KC_SLSH,       XXX,
-                                          LT(_MEDIA,KC_ESC),  KC_LSFT,       LT(_NAV,KC_SPC),  LT(_SYM,KC_ENT),  LT(_NUM,KC_BSPC),  LT(_FUN,KC_DEL)      
-    ), 
+        KC_HEART,    KC_Q,          KC_W,               KC_F,          KC_P,             KC_B,             KC_J,              KC_L,              KC_U,              KC_Y,              KC_QUOT,       XXX,
+        KC_TAB,      LGUI_T(KC_A),  LALT_T(KC_R),       LCTL_T(KC_S),  LSFT_T(KC_T),     KC_G,             KC_M,              LSFT_T(KC_N),      LCTL_T(KC_E),      LALT_T(KC_I),      LGUI_T(KC_O),  KC_RGUI,
+        KC_LCTL,     KC_Z,          ALGR_T(KC_X),       KC_C,          KC_D,             KC_V,             KC_K,              KC_H,              KC_COMM,           ALGR_T(KC_DOT),    KC_SLASH,      XXX,
+                                                        LT(_MEDIA,KC_ESC),  KC_LSFT,     LT(_NAV,KC_SPC),  LT(_SYM,KC_ENT),  LT(_NUM,KC_BSPC),  LT(_FUN,KC_DEL)
+    ),
 
     [_MEDIA] = LAYOUT_split_3x6_3(
         XXX, XXX, XXX, XXX, XXX, XXX,        XXX, XXX, XXX, XXX, XXX, XXX,
@@ -52,7 +52,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         XXX, XXX, KC_7, KC_8, KC_9, KC_KP_PLUS,     XXX, XXX, XXX, XXX, XXX, XXX,
         XXX, XXX, KC_4, KC_5, KC_6, KC_KP_MINUS,    XXX, XXX, XXX, XXX, XXX, XXX,
         XXX, XXX, KC_1, KC_2, KC_3, XXX,            XXX, XXX, XXX, XXX, XXX, XXX,
-                        XXX, XXX, XXX,              XXX, XXX, XXX
+                        KC_0, KC_DOT, XXX,              XXX, XXX, XXX
     ),
 
     [_FUN] = LAYOUT_split_3x6_3(
